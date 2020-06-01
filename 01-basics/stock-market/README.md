@@ -1,3 +1,35 @@
+# Básicos angular CLI
+
+### Instalación de CLI:
+
+```
+npm i -g @angular/cli
+```
+
+### Nueva aplicación:
+
+```
+ng new stock-market
+```
+Esta aplicación la hemos generado sin Router y con CSS
+
+### Arrancar la aplicación:
+```
+ng serve --open
+```
+
+### Generar componente: 
+```
+ng generate component components/stock/stock-item
+```
+
+### Generar modelo:
+```
+ng generate class models/stock/stock
+```
+
+
+
 # Ejercicio 1
 
 1. Comenzar el proyecto con ng new remote-helpdesk
