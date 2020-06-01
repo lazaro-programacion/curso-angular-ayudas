@@ -1,0 +1,12 @@
+<div class="stock-item">
+  <div class="name">{{stock.name}}</div>
+  <div class="code">{{stock.code}}</div>
+  <div [class]="stock.isSubiendo() ? 'subiendo': 'bajando'">
+    {{stock.price + ' €'}}
+  </div>
+  <div>
+    <button (click)="favorite()" [disabled]="isFavorite">
+      Favorito
+    </button>
+  </div>
+</div>
