@@ -1,12 +1,27 @@
-<div class="stock-item">
-  <div class="name">{{stock.name}}</div>
-  <div class="code">{{stock.code}}</div>
-  <div [class]="stock.isSubiendo() ? 'subiendo': 'bajando'">
-    {{stock.price + ' €'}}
-  </div>
-  <div>
-    <button (click)="favorite()" [disabled]="isFavorite">
-      Favorito
-    </button>
+<div *ngIf="true">
+  <div class="stock-item" *ngFor="let stock of stocks; index as i">
+    <div class="name">{{stock.name}}</div>
+    <div class="code">{{stock.code}}</div>
+    <div class="precio" [class.fuerte]="cambioFuerte(stock)" [class.subiendo]="this.stock.isSubiendo()"
+      [class.bajando]="!this.stock.isSubiendo()">
+      <!-- <div [ngStyle]="stockStyles"> -->
+      {{stock.price + ' €'}}
+    </div>
+    <div>
+      <button (click)="setFavorite(i)" *ngIf="!favorite[i]">
+        Favorito
+      </button>
+      <div [ngSwitch]="stock.code">
+        <div *ngSwitchCase="'TEL'">
+          Telefonica es la mejor!!!
+        </div>
+        <div *ngSwitchCase="'GAS'">
+          No, el mejor Naturgy, que le hemos cambiado el nombre para que no se note!!!
+        </div>
+        <div *ngSwitchDefault>
+          Os vais a la porra todos
+        </div>
+      </div>
+    </div>
   </div>
 </div>

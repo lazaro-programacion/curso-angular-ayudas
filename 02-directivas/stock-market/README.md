@@ -52,3 +52,10 @@ es una novedad.
   - nif
   - foto
   - valoración
+
+
+# Ejercicio 2
+- Clase de novedad funcione con ngClass
+- En lugar de deshabilitar el (-), lo eliminanos cuando la cantidad sea 0
+- Añadir un select con los números del 1 al 10 (que más adelante usaremos) para seleccionar una cantidad. Los options generarlos con *ngFor.
+
