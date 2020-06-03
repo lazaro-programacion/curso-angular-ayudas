@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import Service from 'src/app/model/service';
 
 @Component({
@@ -10,12 +10,31 @@ export class ServiceComponent implements OnInit {
 
   public service: Service;
   public quantity = 0;
+  public cardClass: any;
+  public contenido = "";
 
   constructor() { }
 
   cambiarCantidad(value: number) {
     this.quantity += value;
-    // this.quantity = this.quantity + value;
+  }
+
+  setContenido(c){
+    console.log(c);
+    this.contenido = c.toUpperCase();
+  }
+
+  createArrayTo(n: number): number[] {
+    const result: number[] = [];
+    for (let index = 0; index <= n; index++) {
+      result.push(index);
+    }
+    return result;
+  }
+
+  setQuantity(e): void {
+    console.log(e);
+    this.quantity = parseInt(e.target.value);
   }
 
   ngOnInit(): void {
@@ -23,7 +42,10 @@ export class ServiceComponent implements OnInit {
       'Instalacion Antivirus',
       69.99,
       'assets/img/antivirus.jpg',
-      true);
+      false);
   }
+
+
+
 
 }

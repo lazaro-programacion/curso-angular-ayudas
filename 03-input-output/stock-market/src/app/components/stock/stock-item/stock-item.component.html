@@ -1,0 +1,13 @@
+<div class="stock-item">
+  <div class="name">{{stock.name}}</div>
+  <div class="code">{{stock.code}}</div>
+  <div class="precio" [class.fuerte]="cambioFuerte(stock)" [class.subiendo]="this.stock.isSubiendo()"
+    [class.bajando]="!this.stock.isSubiendo()">
+    {{stock.price + ' €'}}
+  </div>
+  <div>
+    <button (click)="setFavorite.emit(stock.code)" *ngIf="!favorite">
+      Favorito
+    </button>
+  </div>
+</div>

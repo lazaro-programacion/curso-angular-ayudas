@@ -1,0 +1,10 @@
+<div class="stock-list">
+  <div *ngFor="let stockObj of stocks">
+    <app-stock-item
+      [stock]="stockObj"
+      (setFavorite) ="onSetFavorite($event)"
+      [favorite] = "favorites.includes(stockObj.code)"
+    ></app-stock-item>
+  </div>
+
+</div>

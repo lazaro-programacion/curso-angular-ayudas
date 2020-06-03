@@ -29,7 +29,7 @@ export class StockItemComponent implements OnInit {
     ];
 
     this.favorite = [false, false, false];
-   // this.stock = new Stock('Telefónica', 'TEL', 1.99, 8.67);
+    // this.stock = new Stock('Telefónica', 'TEL', 1.99, 8.67);
 
     // this.stockClasses = {
     //   subiendo: this.stock.isSubiendo(),

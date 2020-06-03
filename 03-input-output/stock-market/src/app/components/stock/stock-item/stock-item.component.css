@@ -1,0 +1,28 @@
+.stock-item {
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 1em;
+  width: 100px;
+  text-align: center;
+}
+
+.stock-item .name {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.stock-item .code {
+  color: blue;
+}
+
+.stock-item .subiendo {
+  color: green;
+}
+
+.stock-item .bajando {
+  color: red;
+}
+
+.fuerte {
+  font-weight: bold;
+}
