@@ -7,6 +7,6 @@ export class Order {
   public items: OrderItem[];
 
   public getTotalPrice() {
-    this.items.reduce((acc, act) => acc + act.unitPrice * act.quantity, 0);
+    return this.items.reduce((acc, act) => acc + act.unitPrice * act.quantity, 0);
   }
 }
