@@ -1,0 +1,5 @@
+<div class="service-list">
+  <app-service  *ngFor="let s of services" [service]="s"
+  (quantityChange)="onOrderChange($event)">
+  </app-service>
+</div>

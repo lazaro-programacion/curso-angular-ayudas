@@ -1,14 +1,19 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import Service from 'src/app/model/service';
+import { OrderItem } from 'src/app/model/order/order-item';
 
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
   styleUrls: ['./service.component.css']
 })
+
+
 export class ServiceComponent implements OnInit {
 
-  public service: Service;
+  @Input() public service: Service;
+  @Output() public quantityChange: EventEmitter<OrderItem>
+    = new EventEmitter<OrderItem>();
   public quantity = 0;
   public cardClass: any;
   public contenido = "";
@@ -17,9 +22,14 @@ export class ServiceComponent implements OnInit {
 
   cambiarCantidad(value: number) {
     this.quantity += value;
+    this.quantityChange.emit(
+      new OrderItem(this.service.name,
+        this.quantity,
+        this.service.price)
+    );
   }
 
-  setContenido(c){
+  setContenido(c) {
     console.log(c);
     this.contenido = c.toUpperCase();
   }
@@ -33,16 +43,15 @@ export class ServiceComponent implements OnInit {
   }
 
   setQuantity(e): void {
-    console.log(e);
     this.quantity = parseInt(e.target.value);
+    this.quantityChange.emit(
+      new OrderItem(this.service.name,
+        this.quantity,
+        this.service.price)
+    );
   }
 
   ngOnInit(): void {
-    this.service = new Service(
-      'Instalacion Antivirus',
-      69.99,
-      'assets/img/antivirus.jpg',
-      false);
   }
 
 

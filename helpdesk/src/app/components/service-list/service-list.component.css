@@ -1,0 +1,8 @@
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+app-service {
+  margin: 1em;
+}
