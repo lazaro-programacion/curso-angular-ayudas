@@ -1,0 +1,18 @@
+<div class="stock-form">
+  <div>
+  Nombre: <input type="text"
+    [value]="name"
+    (input)="name=$event.target.value"
+    >
+</div>
+<div>
+  Código: <input [(ngModel)]="code" [disabled]="editMode" type="text">
+</div>
+<div>
+  Precio: <input [(ngModel)]="price" type="text">
+</div>
+<div>
+  Precio anterior ¿?: <input [(ngModel)]="previousPrice" type="text">
+</div>
+<button (click)="crear()">Crear</button>
+</div>
