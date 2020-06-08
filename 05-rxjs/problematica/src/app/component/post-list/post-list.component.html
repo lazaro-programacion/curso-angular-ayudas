@@ -1,4 +1,6 @@
 <h1>Lista de componentes</h1>
 <ul>
-  <li *ngFor="let item of posts" >{{item.id}} - {{item.title}} - {{item.body}}</li>
+  <li *ngFor="let item of posts$ | async">
+    {{item.id}} - {{item.title}}
+  </li>
 </ul>
