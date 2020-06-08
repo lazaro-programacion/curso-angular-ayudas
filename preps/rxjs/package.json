@@ -1,0 +1,14 @@
+{
+  "name": "rxjs-pruebas",
+  "version": "1.0.0",
+  "description": "Según el Reactive Manifesto, la programación reactiva es un paradigma enfocado en el trabajo con stream de datos de manera asíncrona. En este se establece las bases de los sistemas reactivos, los cuales deben ser:",
+  "main": "01_observerpattern.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.5.5"
+  }
+}

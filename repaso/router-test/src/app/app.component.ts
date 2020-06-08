@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Super Router Test';
+
+  private title = 'Super Router Test';
+
+  getTitle(): string {
+    return this.title.toUpperCase();
+  }
+
 }
