@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "content": "lorem ipsum ...."
+    },
+    {
+      "id": 2,
+      "title": "angular",
+      "author": "Perico el de los palotes"
+    },
+    {
+      "id": 3,
+      "title": "react",
+      "author": "La delicá de Gandia"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
