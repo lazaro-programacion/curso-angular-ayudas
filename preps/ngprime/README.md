@@ -17,6 +17,10 @@ ng g c components/test
 configuración en el módulo:
 
 ```javascript
+import {MenuModule} from 'primeng/menu';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
   imports: [
     BrowserModule,
     MenuModule,
