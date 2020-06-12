@@ -5,7 +5,11 @@
     {{item.name}} {{item.surname}}
   </li> -->
   <li *ngFor="let item of patients">
-    {{item.name}} {{item.surname}}
+    {{item.name}} {{item.surname}} <a [routerLink]="'/patients/'+item._id">Ver</a>
   </li>
 </ul>
+
+<a routerLink="/patients/new">
+  Nuevo paciente
+</a>
 
