@@ -6,8 +6,10 @@ import { PatientCreateComponent } from './components/patient-create/patient-crea
 
 
 const routes: Routes = [
-  {path: '', component: PatientListComponent},
+  {path: '', redirectTo: '/patients', pathMatch: 'full'},
+  {path: 'patients', component: PatientListComponent},
   {path: 'patients/new', component: PatientCreateComponent},
+  {path: 'patients/:id/edit', component: PatientCreateComponent},
   {path: 'patients/:id', component: PatientItemComponent},
 ];
 

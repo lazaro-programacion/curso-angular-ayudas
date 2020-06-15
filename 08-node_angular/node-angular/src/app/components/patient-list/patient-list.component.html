@@ -5,7 +5,10 @@
     {{item.name}} {{item.surname}}
   </li> -->
   <li *ngFor="let item of patients">
-    {{item.name}} {{item.surname}} <a [routerLink]="'/patients/'+item._id">Ver</a>
+    {{item.name}} {{item.surname}}
+    <a [routerLink]="'/patients/'+item._id">Ver</a> -
+    <a [routerLink]="'/patients/'+item._id+'/edit'">Editar</a> -
+    <a href="#" (click)="delete($event, item._id)" >Borrar</a>
   </li>
 </ul>
 

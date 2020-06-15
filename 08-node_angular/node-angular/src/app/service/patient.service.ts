@@ -12,8 +12,9 @@ export class PatientService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-    })};
+      'Content-Type': 'application/json',
+    })
+  };
 
 
   constructor(private httpClient: HttpClient) {
@@ -30,14 +31,26 @@ export class PatientService {
     );
   }
 
-  savePatient = (patient: Patient): Observable<Patient> => {
-    console.log("saving patient", patient);
-    return this.httpClient.post<Patient>(
-      'http://localhost:4000/patients/', patient, this.httpOptions)
-      .pipe(
-        catchError(this.handleError)
-      );
+  deletePatient = (id: string): Observable<Patient> => {
+    return this.httpClient.delete<Patient>(
+      `http://localhost:4000/patients/${id}`
+    );
+  }
 
+  savePatient = (patient: Patient, id: string = null): Observable<Patient> => {
+    if (id) {
+      return this.httpClient.put<Patient>(
+        'http://localhost:4000/patients/' + id, patient, this.httpOptions)
+        .pipe(
+          catchError(this.handleError)
+        );
+    } else {
+      return this.httpClient.post<Patient>(
+        'http://localhost:4000/patients/', patient, this.httpOptions)
+        .pipe(
+          catchError(this.handleError)
+        );
+    }
   }
 
 
