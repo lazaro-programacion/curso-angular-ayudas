@@ -11,4 +11,14 @@
   Patologias (separadas por comas):
   <input type="text" [(ngModel)]="pathologies">
 </div>
+
+<div>
+  Foto del paciente:
+  <input (change)="changeImage($event)" type="file">
+  <button (click)="upload($event)">Cargar foto</button>
+</div>
+
+<div>
+  <img [src]="foto" alt="" style="max-width: 100px; max-height: 100px;">
+</div>
 <button (click)="save()">Guardar</button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PatientService } from 'src/app/service/patient.service';
 import { Patient } from 'src/app/models/patient';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UploadService } from 'src/app/service/upload.service';
 
 
 @Component({
@@ -15,10 +16,14 @@ export class PatientCreateComponent implements OnInit {
   public surname = '';
   public pathologies = '';
   private id: string;
+  public foto: string;
+
+  public imagenes: FileList;
 
   constructor(private patientService: PatientService,
-              private router: Router,
-              private route: ActivatedRoute) { }
+    private uploadService: UploadService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -31,6 +36,17 @@ export class PatientCreateComponent implements OnInit {
         }
       );
     }
+  }
+
+  changeImage = (e) => {
+    this.imagenes = e.target.files;
+  }
+
+  upload = () => {
+    console.log(this.imagenes);
+    this.uploadService.upload(this.imagenes).subscribe(res => {
+      this.foto = "http://localhost:4000/" + res.path;
+    });
   }
 
   save = () => {
