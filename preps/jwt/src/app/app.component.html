@@ -1,0 +1,11 @@
+<h1>{{title | uppercase}}</h1>
+<ul>
+  <li>
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+  </li>
+  <li>
+    <a [routerLink]="['/message']" routerLinkActive="router-link-active">Message</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

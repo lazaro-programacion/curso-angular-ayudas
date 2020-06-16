@@ -21,9 +21,9 @@ export class PatientCreateComponent implements OnInit {
   public imagenes: FileList;
 
   constructor(private patientService: PatientService,
-    private uploadService: UploadService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+              private uploadService: UploadService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
