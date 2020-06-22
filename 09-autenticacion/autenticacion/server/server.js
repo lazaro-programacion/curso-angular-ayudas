@@ -24,7 +24,6 @@ app.get("/", (req, res) => {
 // Nos envían el usuario y el password y nosotros le devolvemos un token
 app.post("/login", (req, res) => {
   const userPass = req.body;
-
   if (userPass.user === 'alfonso' &&
       bcrypt.hashSync(userPass.password, salt)===hashedPassword) {
     const token = jwt.sign({user: userPass.user}, secretKey, {

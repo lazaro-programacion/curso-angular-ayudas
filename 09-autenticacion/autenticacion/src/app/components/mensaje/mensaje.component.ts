@@ -14,12 +14,9 @@ export class MensajeComponent implements OnInit {
 
   ngOnInit(): void {
     this.mensajeService.getMensaje()
-    //.pipe(catchError(err => console.log("no autorizad")))
-    .subscribe(
-      res => {
-                this.mensaje = res.mensaje;
-      }
-    );
+    .toPromise().then(  res => {
+      this.mensaje = res.mensaje;
+    }).catch()
   }
 
 }

@@ -1,0 +1,15 @@
+<div>
+  <div class="message" *ngFor="let item of messages">
+    <div>
+      <span>{{item.user | uppercase}}:</span>
+      {{item.msg}}
+    </div>
+  </div>
+</div>
+<div>
+  <div>Username: <input type="text" [(ngModel)]="username"></div>
+  <div>Message: <input type="text" [(ngModel)]="message"></div>
+
+
+  <button (click)="enviar()">>>>>></button>
+</div>
