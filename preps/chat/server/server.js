@@ -14,8 +14,6 @@ const mensajes = [
   }
 ]
 
-
-
 const server = app.listen(4000, () => {
   console.log("server up and running")
 })
@@ -28,6 +26,7 @@ io.on("connection", (socket) => {
   socket.on("message", (data) => {
     console.log(data)
     mensajes.push(data);
+    socket.broadcast.emit("messages", mensajes);
     socket.emit("messages", mensajes);
   })
 })

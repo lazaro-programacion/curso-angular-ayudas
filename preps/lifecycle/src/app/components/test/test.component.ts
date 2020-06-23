@@ -5,15 +5,16 @@ import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent implements OnInit , DoCheck, OnDestroy{
+export class TestComponent implements OnInit, DoCheck, OnDestroy {
 
 
   public mensaje = 'hola mundo';
 
   constructor() { }
   ngOnDestroy(): void {
-    console.log("destroy");
+    console.log('destroy');
   }
+
   ngDoCheck(): void {
     console.log('do check');
   }
@@ -23,7 +24,7 @@ export class TestComponent implements OnInit , DoCheck, OnDestroy{
   }
 
   cambia() {
-    this.mensaje="CAmbiado";
+    this.mensaje = 'Cambiado';
   }
 
 }

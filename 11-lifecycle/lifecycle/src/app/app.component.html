@@ -1,0 +1,13 @@
+<h1>{{title | uppercase}}</h1>
+
+<button (click)="cambiaTitulo()">cambia input</button>
+<button (click)="toggleVisible()">cambia Visibilidad</button>
+
+
+
+<hr>
+
+
+<app-prueba *ngIf="visible" [miinput] = "title"></app-prueba>
+
+<router-outlet></router-outlet>
